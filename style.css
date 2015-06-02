@@ -1,0 +1,686 @@
+@charset "utf-8";
+/* CSS Document */
+html,
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	border: none;
+	outline: none;
+	text-decoration: none;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 0;
+	text-decoration: none;
+	list-style: none;
+	background: transparent;
+	font-weight: 400;
+	font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-highlight: none;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body{background:#fff8f4}
+body.white{background:#fff}
+
+
+#body {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.CSSDiv-0 #common_headerSearch,
+#common_headerSearch {
+	background: #f27373;
+	height: 50px;
+	z-index: 3;
+}
+
+#common_headerSearch, #common_headerSearch .input,
+.common_global_row {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.common_global_fixtop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.CSSDiv-0 #common_headerSearch_padding,
+#common_headerSearch_padding {
+	height: 50px;
+}
+
+.CSSDiv-0 #common_headerSearch button,
+#common_headerSearch button {
+	height: 50px;
+	line-height: 50px;
+	padding-left: 12px;
+	padding-right: 12px;
+	font-size: 16px;
+	color: #FFF;
+}
+#common_headerSearch button {
+	float: right;
+}
+
+.CSSDiv-0 #common_headerSearch .input,
+#common_headerSearch .input {
+	height: 36px;
+	margin-top: 7px;
+	margin-left: 12px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+#common_headerSearch, #common_headerSearch .input {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.CSSDiv-0 #common_headerSearch .input input,
+#common_headerSearch .input input {
+	line-height: 36px;
+	width: 100%;
+	height: 100%;
+	padding-left: 10px;
+	font-size: 16px;
+	color: #FFF;
+	background: #cc5050;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input:-moz-placeholder, textarea:-moz-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input::-moz-placeholder, textarea::-moz-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+
+.CSSDiv-7 #common_footer_padding,
+#common_footer_padding {
+	padding-top: 58px;
+}
+
+.CSSDiv-7 #body_footer,
+#body_footer {
+	padding-bottom: 12px;
+}
+
+.CSSDiv-7 #common_footer,
+#common_footer {
+	height: 58px;
+	z-index: 3;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.common_global_fixbottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.CSSDiv-7 #common_footer .recommend.active, #common_footer .recommend:active {
+	background-image: url(http://bakewebstatic.qiniudn.com/mobile/widgets/menu/footer/recommend_active_f73174e.png);
+}
+
+.CSSDiv-7 #common_footer li.active, #common_footer li:active {
+	background: #cc5050;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: center 6px;
+	color: #FFF;
+}
+
+.CSSDiv-7 #common_footer .recommend {
+	background-image: url(http://static.hongbeibang.com/mobile/widgets/menu/footer/recommend_07f30c6.png);
+}
+
+#common_footer .recommend.active, #common_footer .recommend:active {
+	background-image: url(/mobile/widgets/menu/footer/recommend_active_f73174e.png);
+}
+
+.CSSDiv-7 #common_footer li,
+#common_footer li {
+	width: 20%;
+	height: 20px;
+	padding-top: 38px;
+	font-size:14px;
+	text-align: center;
+	color: #fcc;
+	background: #f27373;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: center 6px;
+	float: left;
+}
+#common_footer li:active, #common_footer li.active {
+	background: #cc5050;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: center 6px;
+	color: #FFF;
+}
+#common_footer .recommend {
+	background-image: url(/mobile/widgets/menu/footer/recommend_07f30c6.png);
+}
+
+.common_global_vertical_bar_big, .common_global_vertical_bar_middle, .common_global_vertical_bar_little, #common_footer li {
+	float: left;
+}
+
+.CSSDiv-7 #common_footer .recipe {
+	background-image: url(http://bakewebstatic.qiniudn.com/mobile/widgets/menu/footer/recipe_615232b.png);
+}
+
+#common_footer .recipe {
+	background-image: url(/mobile/widgets/menu/footer/recipe_615232b.png);
+}
+
+.CSSDiv-7 #common_footer .recipe.active, #common_footer .recipe:active {
+	background-image: url(http://7xavxu.com2.z0.glb.clouddn.com/mobile/widgets/menu/footer/recipe_active_a165812.png);
+}
+
+.CSSDiv-7 #common_footer .recipe {
+	background-image: url(http://bakewebstatic.qiniudn.com/mobile/widgets/menu/footer/recipe_615232b.png);
+}
+
+#common_footer .recipe.active, #common_footer .recipe:active {
+	background-image: url(/mobile/widgets/menu/footer/recipe_active_a165812.png);
+}
+
+.CSSDiv-7 #common_footer .edit,
+#common_footer .edit {
+	height: 58px;
+	padding-top: 0;
+	background: #ffb966;
+	background-image: url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/menu/footer/edit_44e2573.png);
+	background-size: 30px 30px;
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+
+.CSSDiv-7 #common_footer .experience {
+	background-image: url(http://7xavxu.com2.z0.glb.clouddn.com/mobile/widgets/menu/footer/feed_5c1e52a.png);
+}
+
+#common_footer .experience {
+	background-image: url(/mobile/widgets/menu/footer/feed_5c1e52a.png);
+}
+.CSSDiv-7 #common_footer .experience.active, #common_footer .experience:active {
+	background-image: url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/menu/footer/feed_active_f2320fe.png);
+}
+#common_footer .experience.active, #common_footer .experience:active {
+	background-image: url(/mobile/widgets/menu/footer/feed_active_f2320fe.png);
+}
+
+.CSSDiv-7 #common_footer .me {
+	background-image: url(http://static.hongbeibang.com/mobile/widgets/menu/footer/me_63b3d72.png);
+}
+
+#common_footer .me {
+	background-image: url(/mobile/widgets/menu/footer/me_63b3d72.png);
+}
+
+.CSSDiv-1 #common_banner {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	zoom: 1;
+}
+
+#common_banner {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+/*
+ * Swiper - Mobile Touch Slider CSS
+ * http://www.idangero.us/sliders/swiper
+ *
+ * Vladimir Kharlampidi, The iDangero.us
+ * http://www.idangero.us/
+ * 
+ * Copyright 2012, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us
+ *
+ * Licensed under GPL & MIT
+ *
+*/
+
+/* Swiper Styles */
+fieldset,img{border:0;}
+a{text-decoration:none;outline:none;}
+a:hover{text-decoration:none;}
+li{list-style:none;}
+
+/*首页*/
+.index_show{position: relative;z-index: 2;width: 100%;background: #fff;}
+.bxslider{overflow: hidden;width: 100%; margin:0px;}
+.bxslider li{width: 100%;overflow: hidden;}
+
+.bxslider .item1 img{
+	float: left;
+	width: 100%;
+}
+
+#bx-pager{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 15px;
+	z-index:2;
+	}
+#bx-pager a{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background: rgba(255,255,255,.5);
+	margin: 0 5px;
+	cursor: pointer;
+	}
+#bx-pager a:hover{text-decoration: none;}
+#bx-pager .active{position: relative;background: #fff;}
+/*#bx-pager .active::before{content: '';position: absolute;top:-10px;left: 25px;border: 5px solid transparent;border-bottom: 5px solid #fd825c;}*/
+
+.bx-controls {
+	display: block;
+}
+
+
+.bx-prev {
+	background:url(../img/arrows.png) no-repeat left top;
+	position:absolute;
+	left:10px;
+	top:50%;
+	margin-top:-15px;
+	width:17px;
+	height:30px;
+	display: none;
+}
+
+
+.bx-next {
+	background:url(../img/arrows.png) no-repeat left bottom;
+	position:absolute;
+	right:10px;
+	top:50%;
+	margin-top:-15px;
+	width:17px;
+	height:30px;
+	display: none;
+}
+
+/************************************************************/
+
+.CSSDiv-2 .common_headerTitle {
+	margin-top: 12px;
+	margin-left: 10px;
+	margin-right: 10px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.common_headerTitle {
+	margin-top: 12px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.common_headerTitle, .common_headerTitle .title {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.CSSDiv-2 .common_headerTitle .icon,
+.common_headerTitle .icon {
+	display: block;
+	width: 7px;
+	height: 18px;
+	background: #f27373;
+	border-radius: 3px;
+	float: left;
+}
+.common_global_vertical_bar_big, .common_global_vertical_bar_middle, .common_global_vertical_bar_little, .common_headerTitle .icon {
+	float: left;
+}
+
+.CSSDiv-2 .common_headerTitle .title {
+	padding-left: 7px;
+	font-size:16px;
+	line-height: 18px;
+	color: #595959;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.common_headerTitle .title {
+	padding-left: 7px;
+	font-size:16px;
+	line-height: 18px;
+	color: #595959;
+}
+
+.common_headerTitle, .common_headerTitle .title {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.CSSDiv-3 #common_contentHeadList,
+#common_contentHeadList {
+	margin-top: 12px;
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 75px;
+}
+
+.CSSDiv-3 .iscroll {
+	position: relative;
+	overflow: hidden;
+}
+
+.CSSDiv-3 #common_contentHeadList .container,
+#common_contentHeadList .container {
+	height: 100%;
+}
+
+.CSSDiv-3 .iscroll-wrap {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+.CSSDiv-3 #common_contentHeadList .container ul,
+#common_contentHeadList .container ul {
+	width: 100%;
+}
+
+.CSSDiv-3 #common_contentHeadList .container ul li,
+#common_contentHeadList .container ul li {
+	float: left;
+	width: 55px;
+	height: 55px;
+	padding: 10px;
+}
+
+.CSSDiv-3 #common_contentHeadList .container ul li img,
+#common_contentHeadList .container ul li img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.CSSDiv-4 .common_contentTextList {
+	margin-top: 2px;
+	margin-left: 10px;
+	margin-right: 10px;
+	overflow: hidden;
+	zoom: 1;
+}
+.common_contentTextList {
+	margin-top: 2px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.common_contentTextList, .common_contentTextList li, .common_contentTextList li .info {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.CSSDiv-4 .common_contentTextList li {
+	position: relative;
+	padding-top: 12px;
+	overflow: hidden;
+}
+
+.common_contentTextList li {
+	position: relative;
+	padding-top: 12px;
+}
+
+.common_contentTextList li .image {
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+.common_contentTextList li .image img {
+	width: 100%;
+	height: 100%;
+	border-radius: 2px;
+	overflow: hidden;
+}
+.CSSDiv-4 .common_contentTextList li .image img {
+	width: 100%;
+	height: 100%;
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.common_contentTextList li .info {
+	margin-left: 15px;
+	margin-right: 30px;
+}
+
+.CSSDiv-4 .common_contentTextList li .info {
+	padding-left: 15px;
+	padding-right: 30px;
+	overflow: hidden;
+}
+.CSSDiv-4 .common_contentTextList li .info .titleInfo,
+.common_contentTextList li .info .titleInfo {
+	line-height: 18px;
+	font-size: 18px;
+	color: #595959;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.common_global_vertical_bar_big, .common_global_vertical_bar_middle, .common_global_vertical_bar_little, .common_contentTextList li .image {
+	 float: left;
+}
+.CSSDiv-4 .common_contentTextList li .info .descInfo,
+.common_contentTextList li .info .descInfo {
+	height: 66px;
+	margin-top: 7px;
+	line-height: 22px;
+	font-size: 14px;
+	color: #8d8d8d;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.CSSDiv-2 .common_headerTitle .more,
+.common_headerTitle .more {
+	margin-right: 3px;
+	width: 20px;
+	height: 18px;
+	background-image: url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/common/headerTitle/more_304ab46.png);
+	background-size: 20px 20px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	float: right;
+}
+.common_headerTitle .more {
+	float: right;
+}
+
+.CSSDiv-5 .common_contentSqureList {
+	margin-top: 6px;
+	margin-left: 7px;
+	margin-right: 7px;
+	overflow: hidden;
+	zoom: 1;
+}
+.common_contentSqureList {
+	margin-top: 6px;
+	margin-left: 7px;
+	margin-right: 7px;
+}
+.common_contentSqureList {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.CSSDiv-5 .common_contentSqureList li {
+	position: relative;
+	margin-top: 6px;
+	width: 50%;
+	border-radius: 3px;
+	overflow: hidden;
+	float: left;
+}
+
+.common_contentSqureList li {
+	position: relative;
+	margin-top: 6px;
+	width: 50%;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.common_global_vertical_bar_big, .common_global_vertical_bar_middle, .common_global_vertical_bar_little, .common_contentSqureList li {
+	float: left;
+}
+
+.CSSDiv-5 .common_contentSqureList li .marginLi,
+.common_contentSqureList li .marginLi {
+	position: relative;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.CSSDiv-5 .common_contentSqureList li .marginLi img,
+.common_contentSqureList li .marginLi img {
+	width: 100%;
+	border-radius: 3px;
+}
+
+.CSSDiv-5 .common_contentSqureList li .marginLi .title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	border-radius: 3px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	text-align: right;
+	font-size: 12px;
+	color: #FFF;
+	background: -webkit-linear-gradient(bottom,rgba(0,0,0,.3),rgba(0,0,0,0));
+}
+
+.common_contentSqureList li .marginLi .title {
+	border-radius: 3px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	text-align: right;
+	font-size: 12px;
+	color: #FFF;
+	background: -webkit-linear-gradient(bottom,rgba(0,0,0,.3),rgba(0,0,0,0));
+}
+
+.common_contentSqureList li .marginLi .title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.CSSDiv-6 .common_collectionItem {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.common_collectionItem {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+.common_collectionItem {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.CSSDiv-6 .common_collectionItem img,
+.common_collectionItem img {
+	width: 100%;
+}
+
+.CSSDiv-6 .common_collectionItem p,
+.common_collectionItem p {
+	background: #FFF;
+	padding: 15px 20px;
+	font-size: 14px;
+	color: #595959;
+	border: 1px solid #dcdcdc;
+	border-bottom: 2px solid #dcdcdc;
+}
