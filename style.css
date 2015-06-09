@@ -37,6 +37,12 @@ body.white{background:#fff}
 	margin: 0 auto;
 }
 
+.CSSDiv-0 {
+	position:fixed;
+	top:0;
+	z-index:10;
+}
+
 .CSSDiv-0 #common_headerSearch,
 #common_headerSearch {
 	background: #f27373;
@@ -263,6 +269,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 	background-image: url(/mobile/widgets/menu/footer/me_63b3d72.png);
 }
 
+.CSSDiv-1 {
+	padding-top: 50px;
+}
+
 .CSSDiv-1 #common_banner {
 	position: relative;
 	overflow: hidden;
@@ -307,14 +317,14 @@ li{list-style:none;}
 	width: 100%;
 }
 
-#bx-pager{
+#bx-pager, .bx-pager{
 	width: 100%;
 	text-align: center;
 	position: absolute;
 	bottom: 15px;
 	z-index:2;
 	}
-#bx-pager a{
+#bx-pager a, .bx-pager a{
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -323,8 +333,8 @@ li{list-style:none;}
 	margin: 0 5px;
 	cursor: pointer;
 	}
-#bx-pager a:hover{text-decoration: none;}
-#bx-pager .active{position: relative;background: #fff;}
+#bx-pager a:hover, .bx-pager a:hover {text-decoration: none;}
+#bx-pager .active, .bx-pager .active {position: relative;background: #fff;}
 /*#bx-pager .active::before{content: '';position: absolute;top:-10px;left: 25px;border: 5px solid transparent;border-bottom: 5px solid #fd825c;}*/
 
 .bx-controls {
@@ -411,7 +421,9 @@ li{list-style:none;}
 }
 
 .CSSDiv-3 #common_contentHeadList,
-#common_contentHeadList {
+#common_contentHeadList,
+.CSSDiv-3 .common_contentHeadList,
+.common_contentHeadList {
 	margin-top: 12px;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -424,7 +436,9 @@ li{list-style:none;}
 }
 
 .CSSDiv-3 #common_contentHeadList .container,
-#common_contentHeadList .container {
+#common_contentHeadList .container,
+.CSSDiv-3 .common_contentHeadList .container,
+.common_contentHeadList .container {
 	height: 100%;
 }
 
@@ -450,12 +464,16 @@ li{list-style:none;}
 }
 
 .CSSDiv-3 #common_contentHeadList .container ul,
-#common_contentHeadList .container ul {
+#common_contentHeadList .container ul,
+.CSSDiv-3 .common_contentHeadList .container ul,
+.common_contentHeadList .container ul {
 	width: 100%;
 }
 
 .CSSDiv-3 #common_contentHeadList .container ul li,
-#common_contentHeadList .container ul li {
+#common_contentHeadList .container ul li,
+.CSSDiv-3 .common_contentHeadList .container ul li,
+.common_contentHeadList .container ul li {
 	float: left;
 	width: 55px;
 	height: 55px;
@@ -463,7 +481,9 @@ li{list-style:none;}
 }
 
 .CSSDiv-3 #common_contentHeadList .container ul li img,
-#common_contentHeadList .container ul li img {
+#common_contentHeadList .container ul li img,
+.CSSDiv-3 .common_contentHeadList .container ul li img,
+.common_contentHeadList .container ul li img {
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
