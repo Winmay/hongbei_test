@@ -1,0 +1,623 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,target-densitydpi=medium-dpi">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+	<meta property="qc:admins" content="10230705766076725121676375" />
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.min.js"></script></script>
+<script src="js/jquery.mobile-1.3.2.min.js">
+</script>
+
+
+<script src="js/react.js">
+</script>
+<script src="js/JSXTransformer.js">
+</script>
+
+<title>烘焙帮</title>
+</head>
+<body>
+
+<div id="body">
+</div>
+
+<script type="text/jsx">
+
+// ** Your code goes here! **
+
+/*****************************************/
+/* 
+**Header_Search
+*/
+var HeaderSearch = React.createClass({
+	
+  	render: function() {
+    	return (
+		  	<div id="common_headerSearch" className="common_global_fixtop">
+				<button className="common_global_rightcol">搜 索</button>
+				<div className="common_global_row input">
+					<input type="text" placeholder="搜索食谱、材料、经验、烘焙达人" value="" />
+				</div>
+			</div>
+		);
+	}
+});
+
+/* 
+**Header
+*/
+var Header = React.createClass({
+	
+  	render: function() {
+    	return (
+		  	<div className="CSSDiv-0">
+		  		<HeaderSearch />
+				<div id="common_headerSearch_padding" className="common_global_row"></div>
+			</div>
+		);
+	}
+});
+/*****************************************/
+
+/* 
+**Content_1 scollimg ul
+*/
+var ContentImg_ul = React.createClass({
+	
+  	render: function() {
+		
+		var link_a = this.props.conImg.link_a;
+		var link_img = this.props.conImg.link_img;
+		
+    	return (
+			<li className="item1">
+				<a href={link_a}>
+					<img src={link_img} />
+				</a>
+			</li>
+		);
+	}
+});
+
+/* 
+**Content_1 scollimg point
+*/
+var ContentImg_point = React.createClass({
+	
+  	render: function() {
+    	return (
+			<a data-slide-index={this.props.conImg.point} href="javascript:void(0);"></a>
+		);
+	}
+});
+
+/* 
+**Content_1 scollimg Slider
+*/
+var ContentImg_Slider = React.createClass({
+	
+	getInitialState: function() {
+    	return {
+			auto: true,
+			pagerCustom: '',
+			nextText: ' ',
+			prevText: ' ',
+			speed: 100,
+			pause: 5000
+		};
+  	},
+
+  	componentDidMount: function() {
+		//$(this.refs.index_bxslider.getDOMNode());
+		if($(React.findDOMNode(this.refs.index_bxslider)).length>0){
+			$(React.findDOMNode(this.refs.index_bxslider)).bxSlider({
+				auto: true,
+				pagerCustom: this.refs.bx_pager.getDOMNode(),
+				nextText: ' ',
+				prevText: ' ',
+				speed: 100,
+				pause: 5000
+			});
+		};
+		
+  	},
+	
+  	render: function() {
+		
+		var imgrows = [];
+		var pointRows = [];
+		this.props.conImg.forEach(function(conImg) {
+			imgrows.push(<ContentImg_ul conImg={conImg} key={conImg.link_img} />);
+			pointRows.push(<ContentImg_point conImg={conImg} key={conImg.point} />);
+		});
+	
+    	return (
+			<div className="index_show" ref="content1">
+				<ul className="bxslider" ref="index_bxslider">
+					{imgrows}
+				</ul>
+				<div className="bx-pager" ref="bx_pager">
+					{pointRows}
+				</div>
+			</div>
+		);
+	}
+});
+
+
+/* 
+**Content_1 scollimg
+*/
+var ContentImg = React.createClass({
+	
+  	render: function() {
+		
+		var conImg = [
+			{link_a: 'http://www.hongbeibang.com/activity/24471/', link_img: 'http://bakeweb.qiniudn.com/FpcFN564L2WwgN1qo_sDZMxyyXyM', point: '0'},
+			{link_a: 'http://www.hongbeibang.com/recipe/24377/', link_img: 'http://bakeweb.qiniudn.com/FobX2kSJYHAT1f3L97CpOPMGCAck', point: '1'},
+			{link_a: 'http://www.hongbeibang.com/recipe/24397/', link_img: 'http://bakeweb.qiniudn.com/FiwoZS-BPJPg5uSqwfItnZFHYRjB', point: '2'},
+			{link_a: 'http://www.hongbeibang.com/recipe/24392/', link_img: 'http://bakeweb.qiniudn.com/FqQQ-rHdyGemFtwCMdaG7parCwoV', point: '3'},
+			{link_a: 'http://www.hongbeibang.com/recipe/24400/', link_img: 'http://bakeweb.qiniudn.com/FrS_i488BWKUpar-GlUfNbP3EJa8', point: '4'},
+			{link_a: 'http://www.hongbeibang.com/recipe/24398/', link_img: 'http://bakeweb.qiniudn.com/FshiDxSd-O-m8OyyB0j5-OOAmFya', point: '5'}
+		];
+	
+    	return (
+		  	<div className="CSSDiv-1">
+				<div id="common_banner">
+					<div className="home-device">
+						<a className="arrow-left" href="#"></a> 
+						<a className="arrow-right" href="#"></a>
+						
+						<ContentImg_Slider conImg={conImg} />
+					  </div>
+				</div>
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**Content Title
+*/
+var ContentTitle = React.createClass({
+	
+  	render: function() {
+		
+		var Title = this.props.ConTitle.Title;
+		
+		var More = this.props.ConTitle.MoreBtn ?
+            <span className="more"></span> :
+            <span></span>;
+		
+    	return (
+		  	<div className="CSSDiv-2">
+				<a href="javascript:void(0)">
+				<div className="common_headerTitle">
+					<span className="icon"></span>
+					{More}
+					<h1 className="title">{Title}</h1>
+				</div>
+				</a>
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**Content_2 Top10 ul
+*/
+var ContentTop_ul = React.createClass({
+	
+  	render: function() {
+		
+		var Toplink_a = this.props.conTop.Toplink_a;
+		var Toplink_img = this.props.conTop.Toplink_img;
+		
+    	return (
+			<a href={Toplink_a}>
+				<li>
+					<img src={Toplink_img} />
+				</li>
+			</a>
+		);
+	}
+});
+
+
+/* 
+**Content_2 Top10 iscoll
+*/
+var ContentTop_iscoll = React.createClass({
+	
+	getInitialState: function() {
+    	return {
+			scrollX: true, 
+			scrollY: false, 
+			mouseWheel: true 
+		};
+  	},
+
+  	componentDidMount: function() {
+		
+		var myScroll;
+		//$(this.refs.common_contentHeadList.getDOMNode());
+		
+		myScroll = new IScroll(React.findDOMNode(this.refs.common_contentHeadList), { 
+			scrollX: true, 
+			scrollY: false, 
+			mouseWheel: true 
+		});
+		
+  	},
+	
+  	render: function() {
+		
+		var conTop = [
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://wx.qlogo.cn/mmopen/3rQTPYrfgA8gbJDEN88k6nBiakrgbdKcsiclvpQFZLictt4eH4WB7XU7XyFAWibxBRux3ic2VMcZGxxEPK44QgaQTAmmZHU8wia8FE/0'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://wx.qlogo.cn/mmopen/xteR2v3eCnVibcYajOMLNiavdL6XrTwZseiaho353P6yiaEvIkejdDsiccTRp8374KRcA38Lia9logGHfhAsKIVQ6LDuqIGjg2mXnR/0'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://bakeweb.qiniudn.com/Fu0Ww9_hY9WTD9D3I_tOUXVV53Vf'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://wx.qlogo.cn/mmopen/2sNZ52p4KlwcTT7Dou6OqfczSon1KIQkyptNxh130ShzxQbicy7hd8eYJ61j6veB16mkrHNr8kl39xrnDgljibH8pjHB6cKkFw/0'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://wx.qlogo.cn/mmopen/cKVHDIBCFxOBqZicHPx1yOH7OSg1r16swOXYPOmfZdDLG5WV7U7XYBJiaBhGgKic3ax2ThRcbtP4KYmkKA8Hy6PzsubjZngLSq3/0'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://bakeweb.qiniudn.com/FuxLsdBNy1AnIn7YB7dC9yaAxcut'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://qzapp.qlogo.cn/qzapp/101200393/05AA59C3CBFC0F089C2449E69CFE176E/100'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://bakeweb.qiniudn.com/FjQGrEMDQysQMzWSET-7jjOL6lkG'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://bakeweb.qiniudn.com/FnhuUH5KnqKAYUtq3F-FxGL-9a2F'},
+			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://bakeweb.qiniudn.com/FrTsSq07Uo3WCjKBYLq6YWzGR__2'}
+		];
+		
+		var Toprows = [];
+		conTop.forEach(function(conTop) {
+			Toprows.push(<ContentTop_ul conTop={conTop} key={conTop.Toplink_img} />);
+		});
+		
+		var divStyle = {
+		  width: '750px'
+		};
+	
+    	return (
+			<div ref="common_contentHeadList" className="iscroll common_contentHeadList">
+				<div className="container iscroll-wrap" style={divStyle}>
+					<ul>
+						{Toprows}                      
+					</ul>
+				</div>
+			</div>
+		);
+	}
+});
+
+
+/* 
+**Content_2 Top10
+*/
+var ContentTop = React.createClass({
+	
+  	render: function() {
+		
+		var ConTitle = {Title: '每日达人TOP10' ,MoreBtn: false };
+		
+    	return (
+		  	<div>
+				<ContentTitle ConTitle={ConTitle} />
+				<div>
+					<div className="CSSDiv-3">
+						<ContentTop_iscoll />
+					</div>
+				</div>
+			</div>
+		);
+	}
+});
+
+
+/*****************************************/
+
+/* 
+**Content_3 Recipe ul
+*/
+var ContentRecipe_ul = React.createClass({
+	
+  	render: function() {
+		
+		var Recipelink_a = this.props.conRecipe.Recipelink_a;
+		var Recipelink_img = this.props.conRecipe.Recipelink_img;
+		var Recipetitle = this.props.conRecipe.Recipetitle;
+		var Recipedesc = this.props.conRecipe.Recipedesc;
+		
+    	return (
+			<li>
+				<a href={Recipelink_a}>
+					<div className="image">
+						<img src={Recipelink_img} />
+					</div>
+					<div className="info">
+						<div className="titleInfo">{Recipetitle}</div>
+						<div className="descInfo">{Recipedesc}</div>
+					</div>
+				</a>
+			</li>
+		);
+	}
+});
+
+/* 
+**Content_3 Recipe
+*/
+var ContentRecipe = React.createClass({
+	
+  	render: function() {
+		
+		var conRecipe = [
+			{Recipelink_a: 'javascript:void(0)', Recipelink_img: 'http://bakeweb.qiniudn.com/Fkh8o9MYAnL7BTZvYjJ_gdvL3la3?imageView2/1/w/200/h/200', Recipetitle: '新手食谱', Recipedesc: '对面的新手看过来，这里的食谱很精彩。一个个攻克，便能成为烘焙小专家哦！新手玩烘焙推荐：烤肉...'},
+			{Recipelink_a: 'javascript:void(0)', Recipelink_img: 'http://bakeweb.qiniudn.com/FjFeaczmcqRfmlijUu72HCU8D2Fb?imageView2/1/w/200/h/200', Recipetitle: '热门食谱', Recipedesc: '最广受欢迎的食谱，这里肯定有你熟悉的食谱哦！超高成功率，想失败都难！'},
+			{Recipelink_a: 'javascript:void(0)', Recipelink_img: 'http://bakeweb.qiniudn.com/FpPu5KvzetSzf6MSr1clATF1VW2R?imageView2/1/w/200/h/200', Recipetitle: '帮友佳作', Recipedesc: '烘焙帮最新食谱，小编精心挑选。烘焙达人们每天为帮友们带来棒棒哒食谱，赞一个！'},
+			{Recipelink_a: 'javascript:void(0)', Recipelink_img: 'http://bakeweb.qiniudn.com/FtyR87fyJslzA7CXMOkLXM857m9d?imageView2/1/w/200/h/200', Recipetitle: '颜值食谱', Recipedesc: '传说中的高颜值，耐看耐吃！想学拍照的可以来这里模仿一下喔！'}
+		];
+		
+		var Reciperows = [];
+		conRecipe.forEach(function(conRecipe) {
+			Reciperows.push(<ContentRecipe_ul conRecipe={conRecipe} key={conRecipe.Recipetitle} />);
+		});
+		
+		var ConTitle = {Title: '食谱合集' ,MoreBtn: false };
+		
+    	return (
+		  	<div>
+				<ContentTitle ConTitle={ConTitle} />
+				<div>
+					<div className="CSSDiv-4">
+						<ul className="common_contentTextList">
+							{Reciperows}
+						</ul>
+					</div>
+				</div>
+			</div>
+		);
+	}
+});
+
+
+/*****************************************/
+
+/* 
+**Content_4 Basic ul
+*/
+var ContentBasic_ul = React.createClass({
+	
+  	render: function() {
+		
+		var Basiclink_a = this.props.conBasic.Basiclink_a;
+		var Basiclink_img = this.props.conBasic.Basiclink_img;
+		var Basictitle = this.props.conBasic.Basictitle;
+		
+    	return (
+			<a href={Basiclink_a}>
+				<li>
+					<div className="marginLi">
+						<img src={Basiclink_img} />
+						<h2 className="title">{Basictitle}</h2>
+					</div>
+				</li>
+			</a>
+		);
+	}
+});
+
+/* 
+**Content_4 Basic
+*/
+var ContentBasic = React.createClass({
+	
+  	render: function() {
+		
+		var conBasic = [
+			{Basiclink_a: 'javascript:void(0)', Basiclink_img: 'http://bakeweb.qiniudn.com/FqZsiElHHUx2Eh9dZWHsaiJ-muH4?imageView2/1/w/320/h/320', Basictitle: '烤箱工具'},
+			{Basiclink_a: 'javascript:void(0)', Basiclink_img: 'http://bakeweb.qiniudn.com/Ft7iDBXMyaUvUKaZGFRelC-Fi9Pv?imageView2/1/w/320/h/320', Basictitle: '烘焙常用材料介绍'},
+			{Basiclink_a: 'javascript:void(0)', Basiclink_img: 'http://bakeweb.qiniudn.com/Fq4Pm0znfXyM7sp0AyVC5mcDiocz?imageView2/1/w/320/h/320', Basictitle: '烘焙基础手法'},
+			{Basiclink_a: 'javascript:void(0)', Basiclink_img: 'http://bakeweb.qiniudn.com/FrU2TAeUlqDa0SXf51ppGDXQf3gd?imageView2/1/w/320/h/320', Basictitle: '烘焙答疑'}
+		];
+		
+		var Basicrows = [];
+		conBasic.forEach(function(conBasic) {
+			Basicrows.push(<ContentBasic_ul conBasic={conBasic} key={conBasic.Basictitle} />);
+		});
+		
+		var ConTitle = {Title: '基础知识' ,MoreBtn: true };
+		
+    	return (
+		  	<div>
+				<ContentTitle ConTitle={ConTitle} />
+				<div>
+					<div className="CSSDiv-5">
+						<ul className="common_contentSqureList">
+							{Basicrows}
+						</ul>
+					</div>
+				</div>
+			</div>
+		);
+	}
+});
+
+/*****************************************/
+
+/* 
+**Content Video_Magazine
+*/
+var ContentVideo_Magazine = React.createClass({
+	
+  	render: function() {
+		
+		var Video_Magazinelink_a = this.props.conVid_Maga.Video_Magazinelink_a;
+		var Video_Magazinelink_img = this.props.conVid_Maga.Video_Magazinelink_img;
+		var Video_Magazinetitle = this.props.conVid_Maga.Video_Magazinetitle;
+		
+    	return (
+			<div className="CSSDiv-6">
+				<div className="common_collectionItem">
+					<a href={Video_Magazinelink_a}>
+						<img src={Video_Magazinelink_img} />
+						<p>{Video_Magazinetitle}</p>
+					</a>
+				</div>
+			</div>
+		);
+	}
+});
+
+/* 
+**Content_5 Video
+*/
+var ContentVideo = React.createClass({
+	
+  	render: function() {
+		
+		var conVid_Maga = {Video_Magazinelink_a: 'javascript:void(0)', Video_Magazinelink_img: 'http://bakeweb.qiniudn.com/FvlGTmDxeuOgnaFRr02q5CDDlJ2q?imageView2/1/w/400/h/230', Video_Magazinetitle: '大师教你如何正确科学艺术切蛋糕'};
+		
+		var ConTitle = {Title: '烘焙视频' ,MoreBtn: false };
+		
+    	return (
+		  	<div>
+				<ContentTitle ConTitle={ConTitle} />
+				<div>
+					<div>
+						<ContentVideo_Magazine conVid_Maga={conVid_Maga} />
+					</div>
+				</div>
+			</div>
+		);
+	}
+});
+
+/* 
+**Content_6 Magazine
+*/
+var ContentMagazine = React.createClass({
+	
+  	render: function() {
+		
+		var conVid_Maga = [
+			{Video_Magazinelink_a: 'javascript:void(0)', Video_Magazinelink_img: 'http://bakeweb.qiniudn.com/Fjj2-G9pZzEiZdWHnzl1yXuzuTwR?imageView2/1/w/400/h/230', Video_Magazinetitle: '烘焙者联盟活动获奖名单公布 恭喜获奖的参赛者！'},
+			{Video_Magazinelink_a: 'javascript:void(0)', Video_Magazinelink_img: 'http://bakeweb.qiniudn.com/Fm3qXZQ0Ww3bCNMTSJsVPOuibi4K?imageView2/1/w/400/h/230', Video_Magazinetitle: '新手走进烘焙的第一步 随着生活水平的提高，人们渐渐地意识到饮食安全的重要性了，因此有不少的新童鞋开始...'}
+		];
+		
+		var Magazinerows = [];
+		conVid_Maga.forEach(function(conVid_Maga) {
+			Magazinerows.push(<ContentVideo_Magazine conVid_Maga={conVid_Maga} key={conVid_Maga.Video_Magazinetitle} />);
+		});
+		
+		var ConTitle = {Title: '烘焙杂志' ,MoreBtn: true };
+		
+    	return (
+		  	<div>
+				<ContentTitle ConTitle={ConTitle} />
+				<div>
+					<div>
+						{Magazinerows}
+					</div>
+				</div>
+			</div>
+		);
+	}
+});
+/*****************************************/
+
+/* 
+**Footer ul
+*/
+var Footer_ul = React.createClass({
+	
+  	render: function() {
+		
+		var Footerlink_a = this.props.FooterMark.Footerlink_a;
+		var FooterName = this.props.FooterMark.FooterName;
+		var  FooterClass= this.props.FooterMark.FooterClass;
+		
+    	return (
+		  	<a href={Footerlink_a}>
+				<li className={FooterClass}>{FooterName}</li>
+			</a>
+		);
+	}
+});
+
+/* 
+**Footer
+*/
+var Footer = React.createClass({
+	
+  	render: function() {
+		
+		var FooterMark = [
+			{Footerlink_a: '/', FooterName: '推荐', FooterClass: 'recommend active'},
+			{Footerlink_a: 'http://www.hongbeibang.com/classify/', FooterName: '分类', FooterClass: 'recipe'},
+			{Footerlink_a: 'http://www.hongbeibang.com/#login', FooterName: '', FooterClass: 'edit'},
+			{Footerlink_a: 'http://www.hongbeibang.com/community/', FooterName: '社区', FooterClass: 'experience'},
+			{Footerlink_a: 'http://www.hongbeibang.com/community/#login', FooterName: '我', FooterClass: 'me'}
+		];
+		
+		var Footerrows = [];
+        FooterMark.forEach(function(FooterMark) {
+            Footerrows.push(<Footer_ul FooterMark={FooterMark} key={FooterMark.FooterName} />);
+        });
+		
+    	return (
+			<div className="CSSDiv-7">
+				<div id="common_footer_padding"></div>
+				<ul id="common_footer" className="common_global_fixbottom">
+					{Footerrows}
+				</ul>
+				<div id="body_footer"></div>
+			</div>
+		);
+	}
+});
+/*****************************************/
+
+/* 
+**body
+*/
+var Bodypage = React.createClass({
+	
+  	render: function() {
+    	return (
+		  	<div>
+		  		<Header />
+		  		<ContentImg />
+				<ContentTop />
+				<ContentRecipe />
+				<ContentBasic />
+				<ContentVideo />
+				<ContentMagazine />
+				<Footer />
+			</div>
+		);
+	}
+});
+React.render(
+  <Bodypage />,
+  document.getElementById('body')
+);
+
+</script>
+
+</body>
+</html>
