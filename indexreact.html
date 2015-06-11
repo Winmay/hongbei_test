@@ -14,7 +14,6 @@
 	<meta http-equiv="Cache" content="no-cache">
 	<meta property="qc:admins" content="10230705766076725121676375" />
 
-<link href="style.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script src="js/iscroll.js"></script>
@@ -29,6 +28,166 @@
 </script>
 
 <title>烘焙帮</title>
+<style type="text/css">
+html,
+body {
+	margin: 0px;
+	border: none;
+	outline: none;
+	text-decoration: none;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 0;
+	text-decoration: none;
+	list-style: none;
+	background: transparent;
+	font-weight: 400;
+	font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-highlight: none;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body{background:#fff8f4}
+#body {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+fieldset,img{border:0;}
+a{text-decoration:none;outline:none;}
+a:hover{text-decoration:none;}
+li{list-style:none;}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input:-moz-placeholder, textarea:-moz-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input::-moz-placeholder, textarea::-moz-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+    color:    #FFF;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+
+
+
+li.recommend.active, li.recommend:active,
+li.recipe.active, li.recipe:active,
+li.experience.active, li.experience:active,
+li.me.active, li.me:active {
+	background-color: #cc5050;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: center 6px;
+	color: #FFF;
+}
+
+li.recommend,
+li.recipe,
+li.experience,
+li.me {
+	height: 20px;
+	padding-top: 38px;
+	background-color: #f27373;
+	color: #fcc;
+	background-position: center 6px;
+}
+
+.recommend.active, .recommend:active {
+	background-image: url(http://bakewebstatic.qiniudn.com/mobile/widgets/menu/footer/recommend_active_f73174e.png);
+}
+
+
+.recommend {
+	background-image: url(http://static.hongbeibang.com/mobile/widgets/menu/footer/recommend_07f30c6.png);
+}
+
+/*.recommend.active, .recommend:active {
+	background-image: url(/mobile/widgets/menu/footer/recommend_active_f73174e.png);
+}
+.recommend {
+	background-image: url(/mobile/widgets/menu/footer/recommend_07f30c6.png);
+}*/
+
+
+.recipe {
+	background-image: url(http://bakewebstatic.qiniudn.com/mobile/widgets/menu/footer/recipe_615232b.png);
+}
+
+/*.recipe {
+	background-image: url(/mobile/widgets/menu/footer/recipe_615232b.png);
+}*/
+
+.recipe.active, .recipe:active {
+	background-image: url(http://7xavxu.com2.z0.glb.clouddn.com/mobile/widgets/menu/footer/recipe_active_a165812.png);
+}
+
+/*.recipe.active, .recipe:active {
+	background-image: url(/mobile/widgets/menu/footer/recipe_active_a165812.png);
+}*/
+
+.edit {
+	height: 58px;
+	padding-top: 0;
+	background-color: #ffb966;
+	background-image: url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/menu/footer/edit_44e2573.png);
+	background-size: 30px 30px;
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+
+.experience {
+	background-image: url(http://7xavxu.com2.z0.glb.clouddn.com/mobile/widgets/menu/footer/feed_5c1e52a.png);
+}
+
+/*.experience {
+	background-image: url(/mobile/widgets/menu/footer/feed_5c1e52a.png);
+}*/
+.experience.active, .experience:active {
+	background-image: url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/menu/footer/feed_active_f2320fe.png);
+}
+/*.experience.active, .experience:active {
+	background-image: url(/mobile/widgets/menu/footer/feed_active_f2320fe.png);
+}*/
+
+.me {
+	background-image: url(http://static.hongbeibang.com/mobile/widgets/menu/footer/me_63b3d72.png);
+}
+
+/*.me {
+	background-image: url(/mobile/widgets/menu/footer/me_63b3d72.png);
+}*/
+
+.bx_pager a {background-color: rgba(255,255,255,.5);}
+
+.bx_pager .active {position: relative;background-color: #fff;}
+
+</style>
 </head>
 <body>
 
@@ -46,11 +205,55 @@
 var HeaderSearch = React.createClass({
 	
   	render: function() {
+		
+		var headerSearch = {
+			background: '#f27373',
+			height: '50px',
+			zIndex: '3',
+			position: 'fixed',
+			top: '0',
+			left: '0',
+			right: '0',
+			margin: '0 auto',
+			maxWidth: '600px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var common_global_row = {
+			height: '36px',
+			marginTop: '7px',
+			marginLeft: '12px',
+			borderRadius: '5px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var global_rightcolbtn = {
+			height: '50px',
+			lineHeight: '50px',
+			paddingLeft: '12px',
+			paddingRight: '12px',
+			fontSize: '16px',
+			color: '#FFF',
+			float: 'right'
+		};
+		
+		var inputStyle = {
+			lineHeight: '36px',
+			width: '100%',
+			height: '100%',
+			paddingLeft: '10px',
+			fontSize: '16px',
+			color: '#FFF',
+			background: '#cc5050'
+		};
+		
     	return (
-		  	<div id="common_headerSearch" className="common_global_fixtop">
-				<button className="common_global_rightcol">搜 索</button>
-				<div className="common_global_row input">
-					<input type="text" placeholder="搜索食谱、材料、经验、烘焙达人" value="" />
+		  	<div style={headerSearch}>
+				<button style={global_rightcolbtn}>搜 索</button>
+				<div style={common_global_row}>
+					<input style={inputStyle} type="text" placeholder="搜索食谱、材料、经验、烘焙达人" value="" />
 				</div>
 			</div>
 		);
@@ -63,10 +266,23 @@ var HeaderSearch = React.createClass({
 var Header = React.createClass({
 	
   	render: function() {
+		
+		var HeaderStyle = {
+			position:'fixed',
+			top:'0',
+			zIndex:'10'
+		};
+		
+		var headerSearch_padding = {
+			overflow: 'hidden',
+			zoom: '1',
+			height: '50px'
+		};
+
     	return (
-		  	<div className="CSSDiv-0">
+		  	<div style={HeaderStyle}>
 		  		<HeaderSearch />
-				<div id="common_headerSearch_padding" className="common_global_row"></div>
+				<div style={headerSearch_padding}></div>
 			</div>
 		);
 	}
@@ -80,13 +296,23 @@ var ContentImg_ul = React.createClass({
 	
   	render: function() {
 		
-		var link_a = this.props.conImg.link_a;
-		var link_img = this.props.conImg.link_img;
+		var scollbxsliderLi = {
+			width: '100%',
+			overflow: 'hidden'
+		};
+		
+		var scollbxsliderImg = {
+			width: '100%',
+			float: 'left'
+		};
+		
+		var link_a = this.props.link_a;
+		var link_img = this.props.link_img;
 		
     	return (
-			<li className="item1">
+			<li style={scollbxsliderLi}>
 				<a href={link_a}>
-					<img src={link_img} />
+					<img style={scollbxsliderImg} src={link_img} />
 				</a>
 			</li>
 		);
@@ -99,8 +325,18 @@ var ContentImg_ul = React.createClass({
 var ContentImg_point = React.createClass({
 	
   	render: function() {
+		
+		var bx_pagerA = {
+			display: 'inline-block',
+			width: '10px',
+			height: '10px',
+			borderRadius: '100%',
+			margin:'0 5px',
+			cursor:'pointer'
+		};
+		
     	return (
-			<a data-slide-index={this.props.conImg.point} href="javascript:void(0);"></a>
+			<a style={bx_pagerA} data-slide-index={this.props.point} href="javascript:void(0);"></a>
 		);
 	}
 });
@@ -138,19 +374,41 @@ var ContentImg_Slider = React.createClass({
 	
   	render: function() {
 		
-		var imgrows = [];
-		var pointRows = [];
-		this.props.conImg.forEach(function(conImg) {
-			imgrows.push(<ContentImg_ul conImg={conImg} key={conImg.link_img} />);
-			pointRows.push(<ContentImg_point conImg={conImg} key={conImg.point} />);
+		var scollShow = {
+			position: 'relative',
+			zIndex: '2',
+			width: '100%',
+			background: '#fff'
+		};
+		
+		var scollbxslider = {
+			overflow: 'hidden',
+			width: '100%',
+			margin: '0px'
+		};
+		
+		var bx_pager = {
+			width: '100%',
+			textAlign: 'center',
+			position: 'absolute',
+			bottom: '15px',
+			zIndex:'2'
+		};
+		
+		var imgrows = this.props.conImg.map(function(conImg_imga) {
+			return <ContentImg_ul link_img={conImg_imga.link_img} link_a={conImg_imga.link_a} key={conImg_imga.link_img} />;
+		});
+		
+		var pointRows = this.props.conImg.map(function(conImg_point) {
+			return <ContentImg_point point={conImg_point.point} key={conImg_point.point} />;
 		});
 	
     	return (
-			<div className="index_show" ref="content1">
-				<ul className="bxslider" ref="index_bxslider">
+			<div ref="content1" style={scollShow}>
+				<ul ref="index_bxslider" style={scollbxslider}>
 					{imgrows}
 				</ul>
-				<div className="bx-pager" ref="bx_pager">
+				<div style={bx_pager} ref="bx_pager" className="bx_pager">
 					{pointRows}
 				</div>
 			</div>
@@ -166,6 +424,17 @@ var ContentImg = React.createClass({
 	
   	render: function() {
 		
+		var scollStyle = {
+			position: 'relative',
+			overflow: 'hidden',
+			width: '100%',
+			zoom: '1'
+		};
+		
+		var scollTop = {
+			paddingTop: '50px'
+		};
+		
 		var conImg = [
 			{link_a: 'http://www.hongbeibang.com/activity/24471/', link_img: 'http://bakeweb.qiniudn.com/FpcFN564L2WwgN1qo_sDZMxyyXyM', point: '0'},
 			{link_a: 'http://www.hongbeibang.com/recipe/24377/', link_img: 'http://bakeweb.qiniudn.com/FobX2kSJYHAT1f3L97CpOPMGCAck', point: '1'},
@@ -176,11 +445,11 @@ var ContentImg = React.createClass({
 		];
 	
     	return (
-		  	<div className="CSSDiv-1">
-				<div id="common_banner">
-					<div className="home-device">
-						<a className="arrow-left" href="#"></a> 
-						<a className="arrow-right" href="#"></a>
+		  	<div style={scollTop}>
+				<div style={scollStyle}>
+					<div>
+						<a href="#"></a> 
+						<a href="#"></a>
 						
 						<ContentImg_Slider conImg={conImg} />
 					  </div>
@@ -199,19 +468,56 @@ var ContentTitle = React.createClass({
 	
   	render: function() {
 		
-		var Title = this.props.ConTitle.Title;
+		var ContentTitle = {
+			marginTop: '12px',
+			marginLeft: '10px',
+			marginRight: '10px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
 		
-		var More = this.props.ConTitle.MoreBtn ?
-            <span className="more"></span> :
+		var Titletext = {
+			paddingLeft: '7px',
+			fontSize: '16px',
+			lineHeight: '18px',
+			color: '#595959',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var TitleIcon = {
+			display: 'block',
+			width: '7px',
+			height: '18px',
+			background: '#f27373',
+			borderRadius: '3px',
+			float: 'left'
+		};
+		
+		var TitleMore = {
+			marginRight: '3px',
+			width: '20px',
+			height: '18px',
+			backgroundImage: 'url(http://7xavxu.com2.z0.glb.qiniucdn.com/mobile/widgets/common/headerTitle/more_304ab46.png)',
+			backgroundSize: '20px 20px',
+			backgroundPosition: 'center center',
+			backgroundRepeat: 'no-repeat',
+			float: 'right'
+		};
+		
+		var Title = this.props.Title;
+		
+		var More = this.props.MoreBtn ?
+            <span style={TitleMore}></span> :
             <span></span>;
 		
     	return (
-		  	<div className="CSSDiv-2">
+		  	<div>
 				<a href="javascript:void(0)">
-				<div className="common_headerTitle">
-					<span className="icon"></span>
+				<div style={ContentTitle}>
+					<span style={TitleIcon}></span>
 					{More}
-					<h1 className="title">{Title}</h1>
+					<h1 style={Titletext}>{Title}</h1>
 				</div>
 				</a>
 			</div>
@@ -228,13 +534,26 @@ var ContentTop_ul = React.createClass({
 	
   	render: function() {
 		
-		var Toplink_a = this.props.conTop.Toplink_a;
-		var Toplink_img = this.props.conTop.Toplink_img;
+		var Topli = {
+			float: 'left',
+			width: '55px',
+			height: '55px',
+			padding: '10px'
+		};
+		
+		var Topimg = {
+			width: '100%',
+			height: '100%',
+			borderRadius: '50%'
+		};
+		
+		var Toplink_a = this.props.Toplink_a;
+		var Toplink_img = this.props.Toplink_img;
 		
     	return (
 			<a href={Toplink_a}>
-				<li>
-					<img src={Toplink_img} />
+				<li style={Topli}>
+					<img style={Topimg} src={Toplink_img} />
 				</li>
 			</a>
 		);
@@ -283,19 +602,34 @@ var ContentTop_iscoll = React.createClass({
 			{Toplink_a: 'javascript:void(0)', Toplink_img: 'http://bakeweb.qiniudn.com/FrTsSq07Uo3WCjKBYLq6YWzGR__2'}
 		];
 		
-		var Toprows = [];
-		conTop.forEach(function(conTop) {
-			Toprows.push(<ContentTop_ul conTop={conTop} key={conTop.Toplink_img} />);
+		var Toprows = conTop.map(function(conTop) {
+			return <ContentTop_ul Toplink_a={conTop.Toplink_a} Toplink_img={conTop.Toplink_img} key={conTop.Toplink_img} />;
 		});
 		
-		var divStyle = {
-		  width: '750px'
+		var TopStyle = {
+		  width: '750px',
+		  height: '100%',
+		  position: 'absolute',
+		  zIndex: '1'
+		};
+		
+		var TopList = {
+		  marginTop: '12px',
+		  marginLeft: '10px',
+		  marginRight: '10px',
+		  height: '75px',
+		  position: 'relative',
+		  overflow: 'hidden'
+		};
+		
+		var Topul = {
+		  width: '100%'
 		};
 	
     	return (
-			<div ref="common_contentHeadList" className="iscroll common_contentHeadList">
-				<div className="container iscroll-wrap" style={divStyle}>
-					<ul>
+			<div ref="common_contentHeadList" style={TopList}>
+				<div style={TopStyle}>
+					<ul style={Topul}>
 						{Toprows}                      
 					</ul>
 				</div>
@@ -316,9 +650,9 @@ var ContentTop = React.createClass({
 		
     	return (
 		  	<div>
-				<ContentTitle ConTitle={ConTitle} />
+				<ContentTitle Title={ConTitle.Title} MoreBtn={ConTitle.MoreBtn} key={ConTitle.Title} />
 				<div>
-					<div className="CSSDiv-3">
+					<div>
 						<ContentTop_iscoll />
 					</div>
 				</div>
@@ -337,20 +671,66 @@ var ContentRecipe_ul = React.createClass({
 	
   	render: function() {
 		
-		var Recipelink_a = this.props.conRecipe.Recipelink_a;
-		var Recipelink_img = this.props.conRecipe.Recipelink_img;
-		var Recipetitle = this.props.conRecipe.Recipetitle;
-		var Recipedesc = this.props.conRecipe.Recipedesc;
+		var Recipeli = {
+			position: 'relative',
+			paddingTop: '12px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var Recipeimage = {
+			width: '90px',
+			height: '90px',
+			float: 'left'
+		};
+		
+		var Recipeimg = {
+			width: '100%',
+			height: '100%',
+			borderRadius: '2px',
+			overflow: 'hidden'
+		};
+		
+		var Recipeinfo = {
+			paddingLeft: '15px',
+			paddingRight: '30px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var RecipetitleInfo = {
+			lineHeight: '18px',
+			fontSize: '18px',
+			color: '#595959',
+			textOverflow: 'ellipsis',
+			whiteSpace: 'nowrap',
+			overflow: 'hidden'
+		};
+		
+		var RecipedescInfo = {
+			height: '66px',
+			marginTop: '7px',
+			lineHeight: '22px',
+			fontSize: '14px',
+			color: '#8d8d8d',
+			textOverflow: 'ellipsis',
+			overflow: 'hidden'
+		};
+		
+		var Recipelink_a = this.props.Recipelink_a;
+		var Recipelink_img = this.props.Recipelink_img;
+		var Recipetitle = this.props.Recipetitle;
+		var Recipedesc = this.props.Recipedesc;
 		
     	return (
-			<li>
+			<li style={Recipeli}>
 				<a href={Recipelink_a}>
-					<div className="image">
-						<img src={Recipelink_img} />
+					<div style={Recipeimage}>
+						<img style={Recipeimg} src={Recipelink_img} />
 					</div>
-					<div className="info">
-						<div className="titleInfo">{Recipetitle}</div>
-						<div className="descInfo">{Recipedesc}</div>
+					<div style={Recipeinfo}>
+						<div style={RecipetitleInfo}>{Recipetitle}</div>
+						<div style={RecipedescInfo}>{Recipedesc}</div>
 					</div>
 				</a>
 			</li>
@@ -365,6 +745,14 @@ var ContentRecipe = React.createClass({
 	
   	render: function() {
 		
+		var RecipeStyle = {
+			marginTop: '2px',
+			marginLeft: '10px',
+			marginRight: '10px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
 		var conRecipe = [
 			{Recipelink_a: 'javascript:void(0)', Recipelink_img: 'http://bakeweb.qiniudn.com/Fkh8o9MYAnL7BTZvYjJ_gdvL3la3?imageView2/1/w/200/h/200', Recipetitle: '新手食谱', Recipedesc: '对面的新手看过来，这里的食谱很精彩。一个个攻克，便能成为烘焙小专家哦！新手玩烘焙推荐：烤肉...'},
 			{Recipelink_a: 'javascript:void(0)', Recipelink_img: 'http://bakeweb.qiniudn.com/FjFeaczmcqRfmlijUu72HCU8D2Fb?imageView2/1/w/200/h/200', Recipetitle: '热门食谱', Recipedesc: '最广受欢迎的食谱，这里肯定有你熟悉的食谱哦！超高成功率，想失败都难！'},
@@ -372,19 +760,18 @@ var ContentRecipe = React.createClass({
 			{Recipelink_a: 'javascript:void(0)', Recipelink_img: 'http://bakeweb.qiniudn.com/FtyR87fyJslzA7CXMOkLXM857m9d?imageView2/1/w/200/h/200', Recipetitle: '颜值食谱', Recipedesc: '传说中的高颜值，耐看耐吃！想学拍照的可以来这里模仿一下喔！'}
 		];
 		
-		var Reciperows = [];
-		conRecipe.forEach(function(conRecipe) {
-			Reciperows.push(<ContentRecipe_ul conRecipe={conRecipe} key={conRecipe.Recipetitle} />);
+		var Reciperows = conRecipe.map(function(conRecipe) {
+			return <ContentRecipe_ul Recipelink_a={conRecipe.Recipelink_a} Recipelink_img={conRecipe.Recipelink_img} Recipetitle={conRecipe.Recipetitle} Recipedesc={conRecipe.Recipedesc} key={conRecipe.Recipetitle} />;
 		});
 		
 		var ConTitle = {Title: '食谱合集' ,MoreBtn: false };
 		
     	return (
 		  	<div>
-				<ContentTitle ConTitle={ConTitle} />
+				<ContentTitle Title={ConTitle.Title} MoreBtn={ConTitle.MoreBtn} key={ConTitle.Title} />
 				<div>
-					<div className="CSSDiv-4">
-						<ul className="common_contentTextList">
+					<div>
+						<ul style={RecipeStyle}>
 							{Reciperows}
 						</ul>
 					</div>
@@ -404,16 +791,52 @@ var ContentBasic_ul = React.createClass({
 	
   	render: function() {
 		
-		var Basiclink_a = this.props.conBasic.Basiclink_a;
-		var Basiclink_img = this.props.conBasic.Basiclink_img;
-		var Basictitle = this.props.conBasic.Basictitle;
+		var Basicli = {
+			marginTop: '6px',
+			position: 'relative',
+			width: '50%',
+			overflow: 'hidden',
+			borderRadius: '3px',
+			float: 'left'
+		};
+		
+		var BasicmarginLi = {
+			position: 'relative',
+			marginLeft: '3px',
+			marginRight: '3px'
+		};
+		
+		var Basicimg = {
+			width: '100%',
+			borderRadius: '3px'
+		};
+		
+		var BasictitleCss = {
+			position: 'absolute',
+			bottom: '0',
+			left: '0',
+			right: '0',
+			margin: '0 auto',
+			borderRadius: '3px',
+			paddingTop: '10px',
+			paddingRight: '10px',
+			paddingBottom: '10px',
+			textAlign: 'right',
+			fontSize: '12px',
+			color: '#FFF',
+			background: '-webkit-linear-gradient(bottom,rgba(0,0,0,.3),rgba(0,0,0,0))'
+		};
+		
+		var Basiclink_a = this.props.Basiclink_a;
+		var Basiclink_img = this.props.Basiclink_img;
+		var Basictitle = this.props.Basictitle;
 		
     	return (
 			<a href={Basiclink_a}>
-				<li>
-					<div className="marginLi">
-						<img src={Basiclink_img} />
-						<h2 className="title">{Basictitle}</h2>
+				<li style={Basicli}>
+					<div style={BasicmarginLi}>
+						<img style={Basicimg} src={Basiclink_img} />
+						<h2 style={BasictitleCss}>{Basictitle}</h2>
 					</div>
 				</li>
 			</a>
@@ -428,6 +851,14 @@ var ContentBasic = React.createClass({
 	
   	render: function() {
 		
+		var BasicStyle = {
+			marginTop: '6px',
+			marginLeft: '7px',
+			marginRight: '7px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
 		var conBasic = [
 			{Basiclink_a: 'javascript:void(0)', Basiclink_img: 'http://bakeweb.qiniudn.com/FqZsiElHHUx2Eh9dZWHsaiJ-muH4?imageView2/1/w/320/h/320', Basictitle: '烤箱工具'},
 			{Basiclink_a: 'javascript:void(0)', Basiclink_img: 'http://bakeweb.qiniudn.com/Ft7iDBXMyaUvUKaZGFRelC-Fi9Pv?imageView2/1/w/320/h/320', Basictitle: '烘焙常用材料介绍'},
@@ -435,19 +866,18 @@ var ContentBasic = React.createClass({
 			{Basiclink_a: 'javascript:void(0)', Basiclink_img: 'http://bakeweb.qiniudn.com/FrU2TAeUlqDa0SXf51ppGDXQf3gd?imageView2/1/w/320/h/320', Basictitle: '烘焙答疑'}
 		];
 		
-		var Basicrows = [];
-		conBasic.forEach(function(conBasic) {
-			Basicrows.push(<ContentBasic_ul conBasic={conBasic} key={conBasic.Basictitle} />);
+		var Basicrows = conBasic.map(function(conBasic) {
+			return <ContentBasic_ul Basiclink_a={conBasic.Basiclink_a} Basiclink_img={conBasic.Basiclink_img} Basictitle={conBasic.Basictitle} key={conBasic.Basictitle} />;
 		});
 		
 		var ConTitle = {Title: '基础知识' ,MoreBtn: true };
 		
     	return (
 		  	<div>
-				<ContentTitle ConTitle={ConTitle} />
+				<ContentTitle Title={ConTitle.Title} MoreBtn={ConTitle.MoreBtn} key={ConTitle.Title} />
 				<div>
-					<div className="CSSDiv-5">
-						<ul className="common_contentSqureList">
+					<div>
+						<ul style={BasicStyle}>
 							{Basicrows}
 						</ul>
 					</div>
@@ -466,16 +896,38 @@ var ContentVideo_Magazine = React.createClass({
 	
   	render: function() {
 		
-		var Video_Magazinelink_a = this.props.conVid_Maga.Video_Magazinelink_a;
-		var Video_Magazinelink_img = this.props.conVid_Maga.Video_Magazinelink_img;
-		var Video_Magazinetitle = this.props.conVid_Maga.Video_Magazinetitle;
+		var Video_MagazineStyle = {
+			marginLeft: '10px',
+			marginRight: '10px',
+			marginTop: '10px',
+			borderRadius: '5px',
+			overflow: 'hidden',
+			zoom: '1'
+		};
+		
+		var Vid_Magazimg = {
+			width: '100%'
+		};
+		
+		var Vid_Magazp = {
+			background: '#FFF',
+			padding: '15px 20px',
+			fontSize: '14px',
+			color: '#595959',
+			border: '1px solid #dcdcdc',
+			borderBottom: '2px solid #dcdcdc'
+		};
+		
+		var Video_Magazinelink_a = this.props.Video_Magazinelink_a;
+		var Video_Magazinelink_img = this.props.Video_Magazinelink_img;
+		var Video_Magazinetitle = this.props.Video_Magazinetitle;
 		
     	return (
-			<div className="CSSDiv-6">
-				<div className="common_collectionItem">
+			<div>
+				<div style={Video_MagazineStyle}>
 					<a href={Video_Magazinelink_a}>
-						<img src={Video_Magazinelink_img} />
-						<p>{Video_Magazinetitle}</p>
+						<img src={Video_Magazinelink_img} style={Vid_Magazimg} />
+						<p style={Vid_Magazp}>{Video_Magazinetitle}</p>
 					</a>
 				</div>
 			</div>
@@ -496,10 +948,10 @@ var ContentVideo = React.createClass({
 		
     	return (
 		  	<div>
-				<ContentTitle ConTitle={ConTitle} />
+				<ContentTitle Title={ConTitle.Title} MoreBtn={ConTitle.MoreBtn} key={ConTitle.Title} />
 				<div>
 					<div>
-						<ContentVideo_Magazine conVid_Maga={conVid_Maga} />
+						<ContentVideo_Magazine Video_Magazinelink_a={conVid_Maga.Video_Magazinelink_a} Video_Magazinelink_img={conVid_Maga.Video_Magazinelink_img} Video_Magazinetitle={conVid_Maga.Video_Magazinetitle} key={conVid_Maga.Video_Magazinetitle} />
 					</div>
 				</div>
 			</div>
@@ -519,16 +971,15 @@ var ContentMagazine = React.createClass({
 			{Video_Magazinelink_a: 'javascript:void(0)', Video_Magazinelink_img: 'http://bakeweb.qiniudn.com/Fm3qXZQ0Ww3bCNMTSJsVPOuibi4K?imageView2/1/w/400/h/230', Video_Magazinetitle: '新手走进烘焙的第一步 随着生活水平的提高，人们渐渐地意识到饮食安全的重要性了，因此有不少的新童鞋开始...'}
 		];
 		
-		var Magazinerows = [];
-		conVid_Maga.forEach(function(conVid_Maga) {
-			Magazinerows.push(<ContentVideo_Magazine conVid_Maga={conVid_Maga} key={conVid_Maga.Video_Magazinetitle} />);
+		var Magazinerows = conVid_Maga.map(function(conVid_Maga) {
+			return <ContentVideo_Magazine Video_Magazinelink_a={conVid_Maga.Video_Magazinelink_a} Video_Magazinelink_img={conVid_Maga.Video_Magazinelink_img} Video_Magazinetitle={conVid_Maga.Video_Magazinetitle} key={conVid_Maga.Video_Magazinetitle} />;
 		});
 		
 		var ConTitle = {Title: '烘焙杂志' ,MoreBtn: true };
 		
     	return (
 		  	<div>
-				<ContentTitle ConTitle={ConTitle} />
+				<ContentTitle Title={ConTitle.Title} MoreBtn={ConTitle.MoreBtn} key={ConTitle.Title} />
 				<div>
 					<div>
 						{Magazinerows}
@@ -547,13 +998,22 @@ var Footer_ul = React.createClass({
 	
   	render: function() {
 		
-		var Footerlink_a = this.props.FooterMark.Footerlink_a;
-		var FooterName = this.props.FooterMark.FooterName;
-		var  FooterClass= this.props.FooterMark.FooterClass;
+		var common_footerLi = {
+			width: '20%',
+			fontSize:'14px',
+			textAlign: 'center',
+			backgroundSize: '30px 30px',
+			backgroundRepeat: 'no-repeat',
+			float: 'left'
+		};
+		
+		var Footerlink_a = this.props.Footerlink_a;
+		var FooterName = this.props.FooterName;
+		var  FooterClass= this.props.FooterClass;
 		
     	return (
 		  	<a href={Footerlink_a}>
-				<li className={FooterClass}>{FooterName}</li>
+				<li style={common_footerLi} className={FooterClass}>{FooterName}</li>
 			</a>
 		);
 	}
@@ -574,18 +1034,36 @@ var Footer = React.createClass({
 			{Footerlink_a: 'http://www.hongbeibang.com/community/#login', FooterName: '我', FooterClass: 'me'}
 		];
 		
-		var Footerrows = [];
-        FooterMark.forEach(function(FooterMark) {
-            Footerrows.push(<Footer_ul FooterMark={FooterMark} key={FooterMark.FooterName} />);
+        var Footerrows = FooterMark.map(function(FooterMark) {
+            return <Footer_ul Footerlink_a={FooterMark.Footerlink_a} FooterName={FooterMark.FooterName} FooterClass={FooterMark.FooterClass} key={FooterMark.FooterName} />;
         });
 		
+		var footer_padding = {
+			paddingTop: '58px'
+		};
+		
+		var FooterStyle = {
+			paddingBottom: '12px'
+		};
+		
+		var common_footer = {
+			height: '58px',
+			zIndex: '3',
+			position: 'fixed',
+			bottom: '0',
+			left: '0',
+			right: '0',
+			margin: '0 auto',
+			maxWidth: '600px'
+		};
+		
     	return (
-			<div className="CSSDiv-7">
-				<div id="common_footer_padding"></div>
-				<ul id="common_footer" className="common_global_fixbottom">
+			<div>
+				<div style={footer_padding}></div>
+				<ul style={common_footer}>
 					{Footerrows}
 				</ul>
-				<div id="body_footer"></div>
+				<div style={FooterStyle}></div>
 			</div>
 		);
 	}
